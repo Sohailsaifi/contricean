@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub-like Issues Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'tracker/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Issues Page</h1>
+    </header>
+    <main>
+        {% for issue in issues %}
+            <div class="issue">
+                <h2><a href="{{ issue.html_url }}" target="_blank">{{ issue.title }}</a></h2>
+                <p>{{ issue.user.login }} opened this issue on {{ issue.parsed_date}}</p>
+                <div class="labels">
+                    {% for label in issue.labels %}
+                        <span class="label" style="background-color: #{{ label.color }}">{{ label.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>

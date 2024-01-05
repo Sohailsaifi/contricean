@@ -1,8 +1,8 @@
 # myapp/urls.py
 from django.urls import path
-from .views import hello, homepage
+from .views import homepage, authentication
 
 urlpatterns = [
-    path('hello/', hello, name='hello'),
-    path('homepage/', homepage, name='homepage'),
+    path('', homepage, name='homepage'),
+    path('authentication/', authentication, name='authentication'),
 ]

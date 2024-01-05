@@ -1,28 +1,51 @@
+{% extends 'tracker/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub-like Issues Page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'tracker/css/styles.css' %}">
-</head>
-<body>
-    <header>
-        <h1>Issues Page</h1>
-    </header>
-    <main>
-        {% for issue in issues %}
-            <div class="issue">
-                <h2><a href="{{ issue.html_url }}" target="_blank">{{ issue.title }}</a></h2>
-                <p>{{ issue.user.login }} opened this issue on {{ issue.parsed_date}}</p>
-                <div class="labels">
-                    {% for label in issue.labels %}
-                        <span class="label" style="background-color: #{{ label.color }}">{{ label.name }}</span>
-                    {% endfor %}
-                </div>
+{% block content %}
+<main>
+    
+    {% include 'tracker/authentication.html' %}
+    {% include 'tracker/filters.html' %}
+    
+    {% for issue in issues %}
+    <div class="issue" data-languages="{{ issue.languages_used|join:',' }}" data-repo="{{ issue.repo_name }}">
+            <h1 class="repo-name">{{ issue.repo_name }}</h1>
+            <h2 class="issue-title"><a href="{{ issue.html_url }}" target="_blank">{{ issue.title }}</a></h2>
+            {% comment %} <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|timesince }} ago</p> {% endcomment %}
+            <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|date:"Y-m-dTH:i:s+00:00"|timesince}} ago</p>
+            
+            {% if issue.assignee %}
+            <p class="label">Already Assigned</p>
+            {% endif %}
+            
+            <div class="labels">
+                {% for label in issue.labels %}
+                <span class="label" id="myLabel" style="background-color: #{{ label.color }}">{{ label.name }}</span>
+                {% endfor %}
             </div>
+            
+            <div class="languages">
+                <h3 id="tech-stack"> Tech Stack: </h3>
+                {% for language in issue.languages_used %}
+                <span class="language">{{ language }}</span>
+                {% endfor %}
+            </div>
+        </div>
         {% endfor %}
-    </main>
-</body>
-</html>
+</main>
+
+<script>
+    function isColorLight(hexColor) {
+        const color = tinycolor(hexColor);
+        return color.isLight();
+    }
+    
+    $('.label').each(function() {
+        const bgColor = window.getComputedStyle(this).backgroundColor;
+        this.style.color = isColorLight(bgColor) ? 'black' : 'white';
+    });
+    
+</script>
+
+    
+
+{% endblock %}

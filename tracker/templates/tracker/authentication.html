@@ -1,0 +1,79 @@
+
+
+<!-- Pop-up container -->
+{% if is_error %}
+    <div id="popup" class="popup-container" style="display: block;">
+{% else %}
+    <div id="popup" class="popup-container" style="display: none;">
+{% endif %}
+  <!-- Close button -->
+  <span class="close-button" onclick="closePopup()">&times;</span>
+
+  <!-- Your authentication code -->
+  <div class="auth-container">
+    <!-- <h2>Authentication Page</h2> -->
+
+    
+    <form action="{% url 'authentication' %}" method="post">
+        {% csrf_token %}
+        
+        <div class="selector">
+            <input type="radio" name="auth_type" value="authenticated" />
+            Enter Token
+        </div>
+        
+        <div class="selector">
+            <input type="radio" name="auth_type" value="unauthenticated" checked />
+            Use Without Token
+        </div>
+        
+        <div id="token_input" style="display: none">
+            <label for="auth_token">Authentication Token:</label>
+            <input
+            type="text"
+            id="auth_token"
+            name="auth_token"
+            placeholder="Enter your token"
+            />
+            
+            <p style="margin-top: 10px"><b>NOTE:</b> You can generate the token in your github account. Using it without the token will allow you to hit only few API calls.</p>
+        </div>
+        
+        <div id="error_message" style="color: red; margin: 10px 0 20px 0;">
+          {{ error_message }}
+        </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to open the pop-up
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  // Function to close the pop-up
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var radioAuth = document.querySelector('input[name="auth_type"][value="authenticated"]');
+    var radioUnauth = document.querySelector('input[name="auth_type"][value="unauthenticated"]');
+    var tokenInput = document.getElementById('token_input');
+
+    radioAuth.addEventListener('change', function() {
+        tokenInput.style.display = this.checked ? 'block' : 'none';
+    });
+    radioUnauth.addEventListener('change', function() {
+        tokenInput.style.display = this.checked ? 'none' : 'block';
+    });
+
+    // Set the initial state based on the default selected option
+    tokenInput.style.display = radioAuth.checked ? 'block' : 'none';
+});
+
+</script>

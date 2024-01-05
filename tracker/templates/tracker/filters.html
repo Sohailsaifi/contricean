@@ -1,0 +1,59 @@
+
+
+<div id="filters" class="filters">
+
+    <div class="filter-element">
+        <label for="languageFilter">Filter by Language:</label>
+        <select id="languageFilter" title="Select Sequence Number" form="obj-form" name="sequence_number_filter" multiple data-style=""
+        class="selectpicker" data-size="5" search="true"  data-container="body">
+        {% comment %} <option value="all">All Languages</option> {% endcomment %}
+        {% for language in unique_languages %}
+        <option value="{{ language }}">{{ language }}</option>
+                    {% endfor %}
+        </select>
+    </div>
+    
+    <div class="filter-element">
+        <label for="repoFilter">Filter by Repository:</label>
+        <select id="repoFilter" title="Select Sequence Number" form="obj-form" name="sequence_number_filter" multiple data-style=""
+        class="selectpicker" data-size="5" search="true"  data-container="body">
+        {% comment %} <option value="all">All Repositories</option> {% endcomment %}
+        {% for repo in unique_repos %}
+        <option value="{{ repo }}">{{ repo }}</option>
+        {% endfor %}
+        </select>
+    </div>
+    
+</div>
+
+<script>
+
+    // JavaScript code for filtering issues
+    document.addEventListener('DOMContentLoaded', function () {
+        const issueElements = document.querySelectorAll('.issue');
+
+        function applyFilters() {
+            console.log("hello!");
+            const selectedLanguages = Array.from(document.getElementById('languageFilter').selectedOptions).map(option => option.value);
+            const selectedRepos = Array.from(document.getElementById('repoFilter').selectedOptions).map(option => option.value);
+
+            console.log(selectedLanguages, selectedRepos);
+
+            issueElements.forEach(function (issueElement) {
+                const languages = issueElement.getAttribute('data-languages').split(',');
+                const repo = issueElement.getAttribute('data-repo');
+                
+                const languageMatch = selectedLanguages.length === 0 || selectedLanguages.includes("all") || selectedLanguages.some(lang => languages.includes(lang));
+                const repoMatch = selectedRepos.length === 0 || selectedRepos.includes("all") || selectedRepos.includes(repo);
+                
+                console.log(languageMatch, repoMatch);
+                
+                issueElement.style.display = languageMatch && repoMatch ? 'block' : 'none';
+            });
+        }
+        
+        document.getElementById('languageFilter').addEventListener('change', applyFilters);
+        document.getElementById('repoFilter').addEventListener('change', applyFilters);
+    });
+
+</script>

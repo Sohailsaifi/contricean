@@ -4,11 +4,11 @@ import requests
 def get_open_issues(owner, repo, token=None):
     url = f"https://api.github.com/repos/{owner}/{repo}/issues"
 
-    # api_url = f"https://api.github.com/repos/{owner}/{repo}/languages"
-    # response = requests.get(api_url)
-    # response.raise_for_status()
-    # languages_used = response.json()
-    # print(list(languages_used.keys()))
+    api_url = f"https://api.github.com/repos/{owner}/{repo}/languages"
+    response = requests.get(api_url)
+    response.raise_for_status()
+    languages_used = list(response.json().keys())
+    # print(languages_used)
     
     headers = {}
     if token:
@@ -24,14 +24,12 @@ def get_open_issues(owner, repo, token=None):
         print(f"Number of open issues: {len(issues)}")
         
         for i, issue in enumerate(issues, start=1):
-            # print(issue.keys())
-            # title = issue["title"]
-            # url = issue["html_url"]
-            # print(f"Issue #{i}: {title} ({url})")
+            issue["repo_name"] = repo
             issue['parsed_date'] = parse(issue['created_at'])
+            issue["languages_used"] = languages_used
             result.append(issue)
         
-        return result
+        return result, languages_used
     else:
         print(f"Failed to retrieve issues. Status code: {response.status_code}")
         print(response.text)
@@ -74,3 +72,30 @@ def get_all_issues(owner, repo, token=None):
         # print(f"Issue #{i}: {title} ({url})")
         result.append(issue)
     return result
+
+
+
+def is_valid_github_token(token):
+    """
+    Verify if a GitHub API token is valid.
+
+    Args:
+        token (str): GitHub API token to be verified.
+
+    Returns:
+        bool: True if the token is valid, False otherwise.
+    """
+    headers = {
+        'Authorization': f'token {token}'
+    }
+
+    # Send a request to the GitHub API using the provided token
+    response = requests.get('https://api.github.com/user', headers=headers)
+
+    # Check the response status code to determine if the token is valid
+    if response.status_code == 200:
+        # Status code 200 means a successful request, i.e., the token is valid
+        return True
+    else:
+        # Any other status code indicates an issue with the token
+        return False

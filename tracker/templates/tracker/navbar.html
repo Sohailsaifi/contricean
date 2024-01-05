@@ -1,0 +1,20 @@
+{% load static %}
+
+<header>
+    <div class="nav-container">
+        <div class="logo-container">
+            <img src="{% static 'tracker/images/logo.png' %}" alt="contricean">
+            <h1>Contricean</h1>
+        </div>
+        <div class="token-status">
+            {% if authentication %}
+                <img src="{% static 'tracker/images/available.png' %}" alt="Using Token" title="Using Token">
+            {% else %}
+                <img src="{% static 'tracker/images/unavailable.png' %}" alt="No Token" title="No Token">
+            {% endif %}
+
+            <!-- Button to open the pop-up -->
+            <button class="edit-button" onclick="openPopup()"><img src="{% static 'tracker/images/edit.png' %}" alt="Edit" ></button>
+        </div>
+    </div>
+</header>

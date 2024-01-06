@@ -10,8 +10,9 @@
     <div class="issue" data-languages="{{ issue.languages_used|join:',' }}" data-repo="{{ issue.repo_name }}">
             <h1 class="repo-name">{{ issue.repo_name }}</h1>
             <h2 class="issue-title"><a href="{{ issue.html_url }}" target="_blank">{{ issue.title }}</a></h2>
-            {% comment %} <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|timesince }} ago</p> {% endcomment %}
-            <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|date:"Y-m-dTH:i:s+00:00"|timesince}} ago</p>
+            <a class="redirect-icon" href="{{ issue.html_url }}" target="_blank"><img src="{% static 'tracker/images/redirect.png' %}" alt="open"></a>
+            <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|timesince }} ago</p>
+            {% comment %} <p class="date-posted">{{ issue.user.login }} opened this issue {{ issue.parsed_date|date:"Y-m-dTH:i:s+00:00"|timesince}} ago</p> {% endcomment %}
             
             {% if issue.assignee %}
             <p class="label">Already Assigned</p>

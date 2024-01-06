@@ -53,7 +53,10 @@ def authentication(request):
 # @login_required(login_url='authentication')
 def homepage(request):
 
-    github_api_token = request.session['github_api_token']
+    try:
+        github_api_token = request.session['github_api_token']
+    except:
+        github_api_token = None
 
     final_result = []
     languages_set = set()
@@ -68,21 +71,21 @@ def homepage(request):
     except:
         error_message = ''
 
-    # for github_username, github_repo in github_usernames.items():
-    #     result, languages_used = get_open_issues(github_username, github_repo, github_api_token)
-    #     final_result.extend(result)
-    #     languages_set.update(languages_used)
-    #     repo_set.add(github_repo)
+    for github_username, github_repo in github_usernames.items():
+        result, languages_used = get_open_issues(github_username, github_repo, github_api_token)
+        final_result.extend(result)
+        languages_set.update(languages_used)
+        repo_set.add(github_repo)
     
     
-    # final_result = sorted(final_result, key=lambda x: x['parsed_date'], reverse=True)
+    final_result = sorted(final_result, key=lambda x: x['parsed_date'], reverse=True)
 
-    languages_set.update(['HTML', 'CSS', 'Makefile', 'Python', 'Shell', 'XSLT', 'TypeScript', 'MDX', 'PLpgSQL', 'JavaScript', 'Handlebars', 'Dockerfile', 'SCSS', 'Random'])
-    repo_set.update(['Ghost', 'supabase', 'obs-studio'])
-    file_path = "tracker\\data\\api-test-data.json"
-    with open(file_path, 'r') as file:
-        file_contents = file.read()
-        final_result = json.loads(file_contents)
+    # languages_set.update(['HTML', 'CSS', 'Makefile', 'Python', 'Shell', 'XSLT', 'TypeScript', 'MDX', 'PLpgSQL', 'JavaScript', 'Handlebars', 'Dockerfile', 'SCSS', 'Random'])
+    # repo_set.update(['Ghost', 'supabase', 'obs-studio'])
+    # file_path = "tracker\\data\\api-test-data.json"
+    # with open(file_path, 'r') as file:
+    #     file_contents = file.read()
+    #     final_result = json.loads(file_contents)
 
     context = {
         'issues': final_result,

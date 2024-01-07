@@ -2,6 +2,7 @@ from dateutil.parser import parse
 import requests
 
 def get_open_issues(owner, repo, token=None):
+    print(token)
     url = f"https://api.github.com/repos/{owner}/{repo}/issues"
 
     api_url = f"https://api.github.com/repos/{owner}/{repo}/languages"
@@ -14,7 +15,7 @@ def get_open_issues(owner, repo, token=None):
     if token:
         headers["Authorization"] = f"token {token}"
     
-    params = {"state": "open", "per_page":100, "page": 1}
+    params = {"state": "open", "per_page":60, "page": 1}
     response = requests.get(url, headers=headers, params=params)
     
     result = []

@@ -231,3 +231,8 @@ width: 20px;
   background: transparent;
   border: none;
 }
+
+.header-note {
+    margin-left: 10px;
+    color: red;
+}

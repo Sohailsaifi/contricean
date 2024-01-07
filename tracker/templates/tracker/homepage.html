@@ -5,6 +5,8 @@
     
     {% include 'tracker/authentication.html' %}
     {% include 'tracker/filters.html' %}
+
+    <p class="header-note" ><b style="color:black;" >NOTE:</b> This is demo mode with few repositories to stay below the allowed limit of free API calls.</p>
     
     {% for issue in issues %}
     <div class="issue" data-languages="{{ issue.languages_used|join:',' }}" data-repo="{{ issue.repo_name }}">

@@ -1,0 +1,402 @@
+[
+  {
+    "github_username": "Requarks",
+    "github_repo": "wiki"
+  },
+  {
+    "github_username": "appsmithorg",
+    "github_repo": "appsmith"
+  },
+  {
+    "github_username": "traefik",
+    "github_repo": "traefik"
+  },
+  {
+    "github_username": "outline",
+    "github_repo": "outline"
+  },
+  {
+    "github_username": "filebrowser",
+    "github_repo": "filebrowser"
+  },
+  {
+    "github_username": "medusajs",
+    "github_repo": "medusa"
+  },
+  {
+    "github_username": "mikecao",
+    "github_repo": "umami"
+  },
+  {
+    "github_username": "authelia",
+    "github_repo": "authelia"
+  },
+  {
+    "github_username": "logseq",
+    "github_repo": "logseq"
+  },
+  {
+    "github_username": "jellyfin",
+    "github_repo": "jellyfin"
+  },
+  {
+    "github_username": "valeriansaliou",
+    "github_repo": "sonic"
+  },
+  {
+    "github_username": "louislam",
+    "github_repo": "uptime-kuma"
+  },
+  {
+    "github_username": "neovim",
+    "github_repo": "neovim"
+  },
+  {
+    "github_username": "metabase",
+    "github_repo": "metabase"
+  },
+  {
+    "github_username": "directus",
+    "github_repo": "directus"
+  },
+  {
+    "github_username": "AppFlowy-IO",
+    "github_repo": "appflowy"
+  },
+  {
+    "github_username": "godotengine",
+    "github_repo": "godot"
+  },
+  {
+    "github_username": "OpenBB-finance",
+    "github_repo": "OpenBBTerminal"
+  },
+  {
+    "github_username": "influxdata",
+    "github_repo": "influxdb"
+  },
+  {
+    "github_username": "RocketChat",
+    "github_repo": "Rocket.Chat"
+  },
+  {
+    "github_username": "penpot",
+    "github_repo": "penpot"
+  },
+  {
+    "github_username": "tooljet",
+    "github_repo": "tooljet"
+  },
+  {
+    "github_username": "gogs",
+    "github_repo": "gogs"
+  },
+  {
+    "github_username": "netdata",
+    "github_repo": "netdata"
+  },
+  {
+    "github_username": "keycloak",
+    "github_repo": "keycloak"
+  },
+  {
+    "github_username": "dragonflydb",
+    "github_repo": "dragonfly"
+  },
+  {
+    "github_username": "dokku",
+    "github_repo": "dokku"
+  },
+  {
+    "github_username": "taosdata",
+    "github_repo": "TDengine"
+  },
+  {
+    "github_username": "typesense",
+    "github_repo": "typesense"
+  },
+  {
+    "github_username": "saleor",
+    "github_repo": "saleor"
+  },
+  {
+    "github_username": "Kong",
+    "github_repo": "insomnia"
+  },
+  {
+    "github_username": "parse-community",
+    "github_repo": "parse-server"
+  },
+  {
+    "github_username": "discourse",
+    "github_repo": "discourse"
+  },
+  {
+    "github_username": "jina-ai",
+    "github_repo": "jina"
+  },
+  {
+    "github_username": "keepassxreboot",
+    "github_repo": "keepassxc"
+  },
+  {
+    "github_username": "wekan",
+    "github_repo": "wekan"
+  },
+  {
+    "github_username": "responsively-org",
+    "github_repo": "responsively-app"
+  },
+  {
+    "github_username": "getredash",
+    "github_repo": "redash"
+  },
+  {
+    "github_username": "ClickHouse",
+    "github_repo": "ClickHouse"
+  },
+  {
+    "github_username": "grafana",
+    "github_repo": "grafana"
+  },
+  {
+    "github_username": "forem",
+    "github_repo": "forem"
+  },
+  {
+    "github_username": "mpv-player",
+    "github_repo": "mpv"
+  },
+  {
+    "github_username": "dbeaver",
+    "github_repo": "dbeaver"
+  },
+  {
+    "github_username": "openfaas",
+    "github_repo": "faas"
+  },
+  {
+    "github_username": "zadam",
+    "github_repo": "trilium"
+  },
+  {
+    "github_username": "plausible",
+    "github_repo": "analytics"
+  },
+  {
+    "github_username": "pocketbase",
+    "github_repo": "pocketbase"
+  },
+  {
+    "github_username": "vuejs",
+    "github_repo": "vuepress"
+  },
+  {
+    "github_username": "jenkinsci",
+    "github_repo": "jenkins"
+  },
+  {
+    "github_username": "appwrite",
+    "github_repo": "appwrite"
+  },
+  {
+    "github_username": "meilisearch",
+    "github_repo": "meilisearch"
+  },
+  {
+    "github_username": "NationalSecurityAgency",
+    "github_repo": "ghidra"
+  },
+  {
+    "github_username": "harness",
+    "github_repo": "drone"
+  },
+  {
+    "github_username": "zulip",
+    "github_repo": "zulip"
+  },
+  {
+    "github_username": "supabase",
+    "github_repo": "supabase"
+  },
+  {
+    "github_username": "atom",
+    "github_repo": "atom"
+  },
+  {
+    "github_username": "mattermost",
+    "github_repo": "focalboard"
+  },
+  {
+    "github_username": "jgraph",
+    "github_repo": "drawio"
+  },
+  {
+    "github_username": "kubernetes",
+    "github_repo": "minikube"
+  },
+  {
+    "github_username": "facebook",
+    "github_repo": "docusaurus"
+  },
+  {
+    "github_username": "rustdesk",
+    "github_repo": "rustdesk"
+  },
+  {
+    "github_username": "Budibase",
+    "github_repo": "budibase"
+  },
+  {
+    "github_username": "mindsdb",
+    "github_repo": "mindsdb"
+  },
+  {
+    "github_username": "Matomo-org",
+    "github_repo": "matomo"
+  },
+  {
+    "github_username": "go-gitea",
+    "github_repo": "gitea"
+  },
+  {
+    "github_username": "huginn",
+    "github_repo": "huginn"
+  },
+  {
+    "github_username": "nextcloud",
+    "github_repo": "server"
+  },
+  {
+    "github_username": "jitsi",
+    "github_repo": "jitsi-meet"
+  },
+  {
+    "github_username": "hashicorp",
+    "github_repo": "vault"
+  },
+  {
+    "github_username": "strapi",
+    "github_repo": "strapi"
+  },
+  {
+    "github_username": "nocodb",
+    "github_repo": "nocodb"
+  },
+  {
+    "github_username": "toeverything",
+    "github_repo": "AFFiNE"
+  },
+  {
+    "github_username": "cube-js",
+    "github_repo": "cube.js"
+  },
+  {
+    "github_username": "laurent22",
+    "github_repo": "joplin"
+  },
+  {
+    "github_username": "home-assistant",
+    "github_repo": "core"
+  },
+  {
+    "github_username": "allinurl",
+    "github_repo": "goaccess"
+  },
+  {
+    "github_username": "minio",
+    "github_repo": "minio"
+  },
+  {
+    "github_username": "getsentry",
+    "github_repo": "sentry"
+  },
+  {
+    "github_username": "chatwoot",
+    "github_repo": "chatwoot"
+  },
+  {
+    "github_username": "tootsuite",
+    "github_repo": "mastodon"
+  },
+  {
+    "github_username": "commaai",
+    "github_repo": "openpilot"
+  },
+  {
+    "github_username": "obsproject",
+    "github_repo": "obs-studio"
+  },
+  {
+    "github_username": "ShareX",
+    "github_repo": "ShareX"
+  },
+  {
+    "github_username": "signalapp",
+    "github_repo": "Signal-Android"
+  },
+  {
+    "github_username": "prometheus",
+    "github_repo": "prometheus"
+  },
+  {
+    "github_username": "photoprism",
+    "github_repo": "photoprism"
+  },
+  {
+    "github_username": "calcom",
+    "github_repo": "cal.com"
+  },
+  {
+    "github_username": "mifi",
+    "github_repo": "lossless-cut"
+  },
+  {
+    "github_username": "containers",
+    "github_repo": "podman"
+  },
+  {
+    "github_username": "dgraph-io",
+    "github_repo": "dgraph"
+  },
+  {
+    "github_username": "apache",
+    "github_repo": "superset"
+  },
+  {
+    "github_username": "TryGhost",
+    "github_repo": "Ghost"
+  },
+  {
+    "github_username": "n8n-io",
+    "github_repo": "n8n"
+  },
+  {
+    "github_username": "mattermost",
+    "github_repo": "mattermost-server"
+  },
+  {
+    "github_username": "gitlabhq",
+    "github_repo": "gitlabhq"
+  },
+  {
+    "github_username": "juanfont",
+    "github_repo": "headscale"
+  },
+  {
+    "github_username": "VSCodium",
+    "github_repo": "vscodium"
+  },
+  {
+    "github_username": "odoo",
+    "github_repo": "odoo"
+  },
+  {
+    "github_username": "hoppscotch",
+    "github_repo": "hoppscotch"
+  },
+  {
+    "github_username": "homebridge",
+    "github_repo": "homebridge"
+  }
+]

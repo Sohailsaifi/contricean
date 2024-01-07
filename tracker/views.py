@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 from tracker.utils.github_api_functions import *
 from tracker.data.repo_list import *
-from config import github_token
+from config import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 import json
@@ -58,6 +58,7 @@ def homepage(request):
     except:
         github_api_token = None
 
+    # github_api_token = token_2
     final_result = []
     languages_set = set()
     repo_set = set()
@@ -70,6 +71,12 @@ def homepage(request):
         error_message = request.session['error_message']
     except:
         error_message = ''
+    
+    # github_entries = json.load(open("tracker\\data\\repositories.json"))
+    # for entry in github_entries:
+    #     # print(entry)
+    #     github_username = entry['github_username']
+    #     github_repo = entry['github_repo']
 
     for github_username, github_repo in github_usernames.items():
         result, languages_used = get_open_issues(github_username, github_repo, github_api_token)

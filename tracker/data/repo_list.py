@@ -1,7 +1,7 @@
 
 github_usernames = {
     "TryGhost": "Ghost",
-    # "supabase": "supabase",
-    # "obsproject": "obs-studio",
+    "supabase": "supabase",
+    "obsproject": "obs-studio",
     # "mastodon": "mastodon",
 }

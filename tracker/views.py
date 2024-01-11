@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 from tracker.utils.github_api_functions import *
 from tracker.data.repo_list import *
-from config import *
+# from config import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 import json
